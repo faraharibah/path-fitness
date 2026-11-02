@@ -1,12 +1,7 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
-import { auth } from '@clerk/nextjs/server';
 import { Activity, ArrowRight, Footprints, Heart, Mountain } from 'lucide-react';
 
-export default async function LandingPage() {
-  const { userId } = await auth();
-  if (userId) redirect('/today');
-
+export default function LandingPage() {
   return (
     <main className="grid min-h-screen place-items-center bg-[#F2F2F7] px-5 py-12 text-[#1C1C1E]">
       <div className="w-full max-w-md">
@@ -26,9 +21,8 @@ export default async function LandingPage() {
             <div className="flex items-center gap-3 rounded-2xl bg-[#F7F7FA] p-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-[#34C759]"><Heart size={19}/></span><div><div className="text-sm font-bold">Consistency without pressure</div><div className="text-xs text-[#8E8E93]">Small steps count. Rest days too.</div></div></div>
             <div className="flex items-center gap-3 rounded-2xl bg-[#F7F7FA] p-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-white text-[#5856D6]"><Mountain size={19}/></span><div><div className="text-sm font-bold">Your path, your activities</div><div className="text-xs text-[#8E8E93]">Run, hike, ride, stretch, and more.</div></div></div>
           </div>
-          <Link href="/sign-in" className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#007AFF] px-5 py-3.5 text-base font-semibold text-white transition hover:bg-blue-600">Sign in <ArrowRight size={17}/></Link>
-          <p className="mt-4 text-center text-sm text-[#8E8E93]">New to Path? <Link href="/sign-up" className="font-semibold text-[#007AFF]">Create an account</Link></p>
-          <p className="mt-5 text-center text-xs text-[#8E8E93]">Your dashboard is private to your account.</p>
+          <Link href="/today" className="mt-7 flex w-full items-center justify-center gap-2 rounded-full bg-[#007AFF] px-5 py-3.5 text-base font-semibold text-white transition hover:bg-blue-600">Continue as guest <ArrowRight size={17}/></Link>
+          <p className="mt-5 text-center text-xs text-[#8E8E93]">No account needed. Your progress stays in this browser.</p>
         </section>
       </div>
     </main>
