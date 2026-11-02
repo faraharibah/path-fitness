@@ -1,6 +1,9 @@
-node_modules
-.next
-out
-.DS_Store
-*.log
+node_modules/
+.next/
+out/
+.vercel/
+.clerk/
 .env*
+!.env.example
+.DS_Store
+coverage/
