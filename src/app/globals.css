@@ -19,4 +19,10 @@ html.dark .glass { background: rgba(22,22,24,.86); }
 .hide-scrollbar { scrollbar-width: none; }
 .ecg-trace { stroke-dasharray: 48; stroke-dashoffset: 48; animation: ecg-draw 1.6s ease-in-out infinite; }
 @keyframes ecg-draw { 0% { stroke-dashoffset: 48; opacity: .45; } 18% { opacity: 1; } 72%, 100% { stroke-dashoffset: 0; opacity: 1; } }
+@media (max-width: 640px) {
+  .text-sm { font-size: .9375rem; line-height: 1.4rem; }
+  .text-xs { font-size: .8125rem; line-height: 1.2rem; }
+  .text-\[10px\] { font-size: .6875rem; line-height: 1rem; }
+  .text-\[11px\] { font-size: .75rem; line-height: 1rem; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
