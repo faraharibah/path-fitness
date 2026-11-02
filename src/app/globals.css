@@ -4,8 +4,9 @@
 
 *, *::before, *::after { box-sizing: border-box; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 :root { color-scheme: light; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
 html.dark { color-scheme: dark; }
-body { margin: 0; background: #f2f2f7; color: #1c1c1e; -webkit-font-smoothing: antialiased; transition: background-color 320ms cubic-bezier(.2,.8,.2,1), color 320ms cubic-bezier(.2,.8,.2,1); }
+body { margin: 0; background: #f2f2f7; color: #1c1c1e; -webkit-font-smoothing: antialiased; overscroll-behavior-y: none; transition: background-color 320ms cubic-bezier(.2,.8,.2,1), color 320ms cubic-bezier(.2,.8,.2,1); }
 html.dark body { background: #0d0d0e; color: #f2f2f7; }
 html.theme-transition body, html.theme-transition body * { transition-property: color, background-color, border-color, box-shadow, fill, stroke; transition-duration: 320ms; transition-timing-function: cubic-bezier(.2,.8,.2,1); }
 button, input, select { font: inherit; }
@@ -17,6 +18,7 @@ button { cursor: pointer; }
 html.dark .glass { background: rgba(22,22,24,.86); }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { scrollbar-width: none; }
+.modal-scroll { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
 .ecg-trace { stroke-dasharray: 48; stroke-dashoffset: 48; animation: ecg-draw 1.6s ease-in-out infinite; }
 @keyframes ecg-draw { 0% { stroke-dashoffset: 48; opacity: .45; } 18% { opacity: 1; } 72%, 100% { stroke-dashoffset: 0; opacity: 1; } }
 @media (max-width: 640px) {
